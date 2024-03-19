@@ -13,6 +13,7 @@ const val DIE_SIDES = "dIcE_SiDeS"
 
 class DiceFragment : Fragment() {
     private var sides: Int? = null
+    private var currentNumber = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,11 +37,19 @@ class DiceFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        savedInstanceState?.run {
+
+        }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
+
+        outState.putInt(DIE_SIDES, currentNumber)
     }
+
+
 
     companion object {
 
